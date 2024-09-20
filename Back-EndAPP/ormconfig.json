@@ -1,0 +1,13 @@
+{
+    "type": "mysql",
+    "host": "192.168.0.178",
+    "port": 3306,
+    "username": "admin",
+    "password": "password",
+    "database": "meal_organiser_test",
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/domain/entities/*.ts"],
+    "migrations": ["src/migration/*.ts"],
+    "subscribers": ["src/subscriber/*.ts"]
+  }
