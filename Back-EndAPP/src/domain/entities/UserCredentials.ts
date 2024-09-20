@@ -5,11 +5,11 @@ import { Entity,PrimaryGeneratedColumn,Column,OneToOne, NumericType } from "type
 @Entity()
 export class UserCredentials{
 
-    @Column()
+    @Column('id')
     user_id?:number;
-    @Column()
+    @Column('email')
     username?:string;
-    @Column()
-    password:string;
+    @Column('password')
+    password?:string;
     
 }

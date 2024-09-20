@@ -22,15 +22,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.initializeDatabase = void 0;
 const typeorm_1 = require("typeorm");
@@ -52,13 +43,13 @@ const AppDataSource = new typeorm_1.DataSource({
     logging: false, // Log SQL queries
     entities: [], // Array of entity classes
 });
-const initializeDatabase = () => __awaiter(void 0, void 0, void 0, function* () {
+const initializeDatabase = async () => {
     try {
-        yield AppDataSource.initialize();
+        await AppDataSource.initialize();
         console.log("Data source has been initialised");
     }
     catch (error) {
         console.error("Erro during Data source initialisation");
     }
-});
+};
 exports.initializeDatabase = initializeDatabase;
